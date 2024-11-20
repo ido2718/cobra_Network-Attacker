@@ -22,6 +22,7 @@ I created Cobra Network Attacker as a learning project to gain a deeper understa
 ARP (Address Resolution Protocol) is used to map IP addresses to MAC addresses in local area networks (LANs). It is a crucial part of the network communication process. ARP Spoofing (also known as ARP Poisoning) is an attack where the attacker sends fake ARP messages over the network, associating their own MAC address with the IP address of another device (e.g., the gateway). This allows the attacker to intercept, modify, or block communication between devices on the network.
 
 By using **ARP Spoofing** in Cobra Network Attacker, you can simulate this attack and observe how it can be used for MITM attacks.
+![My GIF](arp-man-in-the-middle.gif)
 
 ## SSL Stripping
 
@@ -79,6 +80,4 @@ By using this tool, you agree to use it in compliance with all applicable laws a
 
 Feel free to fork the repository and contribute. If you find any bugs or would like to suggest new features, please submit a pull request.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+.
