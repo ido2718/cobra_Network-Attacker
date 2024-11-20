@@ -22,13 +22,14 @@ I created Cobra Network Attacker as a learning project to gain a deeper understa
 ARP (Address Resolution Protocol) is used to map IP addresses to MAC addresses in local area networks (LANs). It is a crucial part of the network communication process. ARP Spoofing (also known as ARP Poisoning) is an attack where the attacker sends fake ARP messages over the network, associating their own MAC address with the IP address of another device (e.g., the gateway). This allows the attacker to intercept, modify, or block communication between devices on the network.
 
 By using **ARP Spoofing** in Cobra Network Attacker, you can simulate this attack and observe how it can be used for MITM attacks.
-![My GIF](arp-man-in-the-middle.gif)
+![ARP_GIF](arp-man-in-the-middle.gif)
 
 ## SSL Stripping
 
 SSL Stripping is an attack that downgrades a secure HTTPS connection to an unencrypted HTTP connection. The attacker sits in the middle of the communication between the client and the server and intercepts the initial HTTPS request. The attacker then forwards the request to the server as HTTP, while maintaining an HTTPS connection with the client. This allows the attacker to read sensitive data that would otherwise be encrypted.
-
 This method of attack is included in the **MITM** section of Cobra Network Attacker to demonstrate how attackers can bypass SSL encryption and steal sensitive information.
+![SSL_GID](sslgif.gif)
+
 
 ## DNS Spoofing
 
