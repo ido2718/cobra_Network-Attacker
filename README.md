@@ -1,4 +1,4 @@
-# Cobra Network Attacker
+# Cobra Network Attacker🐍
 
 Cobra Network Attacker is a powerful and versatile network penetration testing tool designed for educational purposes. It provides a range of features that help network security enthusiasts and professionals learn about various types of attacks and how they work. The tool includes three main attack methods: **MITM (Man-In-The-Middle)**, **DoS (Denial of Service)**, and **Brute Forcing**. Each attack method has specialized sub-options for more in-depth testing, such as **SSL Stripping** and **DNS Spoofing**.
 
