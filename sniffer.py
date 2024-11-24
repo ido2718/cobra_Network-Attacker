@@ -1,6 +1,7 @@
 import  sys
 import socket
 import struct
+ 
 
 #covert Bytes mac address to a string
 def get_mac_addr(bytes_addr):
@@ -58,7 +59,7 @@ def udp_head(raw_data):
     data = raw_data[8:]
     return source_p,dest_p,length,checksum,data
 
-def ipv4_header(raw_data):
+def get_ipv4_header(raw_data):
     #The first byte contain both the header and version
     version_ang_length=raw_data[0]
     #The first 4 bits are the version
@@ -98,7 +99,7 @@ def anylaze_packet(raw_data):
     print('\nEthernet Frame:')
     print('Destination: {}, Source: {}, Protocol: {}'.format(eth[0], eth[1], eth[2]))
     if eth[2] == 8:  # IPv4
-        ipv4 = ipv4_header(eth[3])
+        ipv4 = get_ipv4_header(eth[3])
         source = get_ip_addr(ipv4[4])
         target = get_ip_addr(ipv4[5])
 
@@ -166,28 +167,4 @@ def anylaze_packet(raw_data):
         print('\t\t - Target MAC: {}, Target IP: {}'.format(arp[7], arp[8]))
 
 #the function will sniff and forward packets
-def sniff_packets(interface,target1_ip,target2_ip):
-    #create a raw socket
-    s = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.ntohs(3))
-
-    while True:
-        raw_data,addr= s.recvfrom(65535)
-        eth=ethernet_head(raw_data)
-        #if the network header is ipv4
-        if eth[2]== 8:
-            ipv4_header=get_ip_addr(raw_data)
-            target_ip=get_ip_addr(ipv4_header[4])
-            source_ip=get_ip_addr(ipv4_header[5])
-            #if the packet is between the spoof ip and the target ip we will print the packet details and  forward the packet
-            if (target1_ip==target_ip and target2_ip==source_ip) or (target2_ip==target_ip and target1_ip==source_ip):
-                anylaze_packet(raw_data)
-                #forward_packet(raw_data,interface)
-                pass
-
-
-
-
-
-
-
 

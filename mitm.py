@@ -2,7 +2,7 @@ from colorama import Fore
 import time
 import nmap
 
-from sniffer import sniff_packets
+from sniffer2 import sniff_packets
 from arp_spoofer import send_arp_packet
 import psutil
 import os
@@ -87,6 +87,7 @@ def mitm_attacker():
         while True:
             send_arp_packet(interface, target_ip, spoof_ip, mac_address)
             send_arp_packet(interface, spoof_ip, target_ip, mac_address)
+            
 
     except KeyboardInterrupt:
         print("Attack interrupted. Stopping...")
